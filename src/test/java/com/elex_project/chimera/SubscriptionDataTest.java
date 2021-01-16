@@ -19,7 +19,7 @@ public class SubscriptionDataTest {
 	@Disabled
 	public void test(){
 		try (BufferedReader reader = new BufferedReader(new InputStreamReader(SubscriptionDataTest.class
-				.getResourceAsStream("/subs_data_sample.xml")))){
+				.getResourceAsStream("/subs_sample.xml")))){
 			StringBuilder sb = new StringBuilder();
 			reader.lines().forEachOrdered(new Consumer<String>() {
 				@Override
