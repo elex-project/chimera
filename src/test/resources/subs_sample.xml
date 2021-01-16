@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<m2m:cin xmlns:m2m="http://www.onem2m.org/xml/protocols">
+	<ty>4</ty>
+	<ri>CI00000000011786185342</ri>
+	<rn>CI00000000011786185342</rn>
+	<pi>CT00000000000000565201</pi>
+	<ct>2020-04-21T14:16:34+09:00</ct>
+	<lt>2020-04-21T14:16:34+09:00</lt>
+	<ppt>
+		<gwl>35.93908,129.52631,0</gwl>
+		<geui>00170bfffe115c71</geui>
+		<devl>35.93908,129.52631,0</devl>
+		<fp>1</fp>
+		<trid></trid>
+		<plidx>0</plidx>
+		<ctype>11</ctype>
+		<fixType>9</fixType>
+		<result>0</result>
+		<accuracy>3000</accuracy>
+	</ppt>
+	<sr>/0240771000000545/v1_0/remoteCSE-00000545702c1ffffe549886/container-LoRa/subscription-the-pohang</sr>
+	<et>2020-04-22T14:16:34+09:00</et>
+	<st>84285</st>
+	<cr>RC00000000000000586420</cr>
+	<cnf>LoRa/Sensor</cnf>
+	<cs>86</cs>
+	<con>1402010000031602bc030c030c00000000000000001e39b41c027b02280000000000000000024944200000</con>
+</m2m:cin>

@@ -122,6 +122,7 @@ dependencies {
 	implementation("org.jetbrains:annotations:20.1.0")
 
 	implementation("com.fasterxml.jackson.core:jackson-core:2.12.1")
+	implementation("com.fasterxml.jackson.core:jackson-databind:2.12.1")
 	implementation("com.fasterxml.jackson.core:jackson-annotations:2.12.1")
 
 	compileOnly("org.projectlombok:lombok:1.18.16")
