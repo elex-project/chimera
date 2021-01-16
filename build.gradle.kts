@@ -6,8 +6,8 @@ plugins {
 }
 
 group = "com.elex-project"
-version = "1.0-SNAPSHOT"
-description = ""
+version = "3.0.0"
+description = "Thingplug API"
 
 repositories {
 	maven {
@@ -18,8 +18,8 @@ repositories {
 java {
 	withSourcesJar()
 	withJavadocJar()
-	sourceCompatibility = org.gradle.api.JavaVersion.VERSION_1_8
-	targetCompatibility = org.gradle.api.JavaVersion.VERSION_1_8
+	sourceCompatibility = org.gradle.api.JavaVersion.VERSION_11
+	targetCompatibility = org.gradle.api.JavaVersion.VERSION_11
 }
 
 configurations {
@@ -32,12 +32,12 @@ configurations {
 }
 
 tasks.jar {
-	manifest { // todo
+	manifest {
 		attributes(mapOf(
 				"Implementation-Title" to project.name,
 				"Implementation-Version" to project.version,
 				"Implementation-Vendor" to "ELEX co.,pte.",
-				"Automatic-Module-Name" to "${project.group}.${project.name}"
+				"Automatic-Module-Name" to "com.elex_project.chimera"
 		))
 	}
 }
@@ -69,19 +69,13 @@ publishing {
 		create<MavenPublication>("mavenJava") {
 			from(components["java"])
 			pom {
-				// todo
 				name.set(project.name)
 				description.set(project.description)
-				url.set("https://")
-				properties.set(mapOf(
-						"myProp" to "value",
-						"prop.with.dots" to "anotherValue"
-				))
+				url.set("https://github.com/elex-project/chimera")
 				licenses {
 					license {
-						// todo
-						name.set("licenseName")
-						url.set("licenseUrl")
+						name.set("LGPL-3.0")
+						url.set("https://github.com/elex-project/chimera/blob/main/LICENSE")
 					}
 				}
 				developers {
@@ -92,10 +86,9 @@ publishing {
 					}
 				}
 				scm {
-					// todo
-					connection.set("scm:git:https://github.com/my-library.git")
-					developerConnection.set("scm:git:https://github.com/my-library.git")
-					url.set("https://github.com/my-library/")
+					connection.set("scm:git:https://github.com/elex-project/chimera.git")
+					developerConnection.set("scm:git:https://github.com/elex-project/chimera.git")
+					url.set("https://github.com/elex-project/chimera")
 				}
 			}
 		}
@@ -113,9 +106,9 @@ publishing {
 				password = project.findProperty("repo.password") as String
 			}
 		}
-		maven { //todo
+		maven {
 			name = "mavenGithub"
-			url = uri("https://maven.pkg.github.com/elex-project/tmpl-java-library")
+			url = uri("https://maven.pkg.github.com/elex-project/chimera")
 			credentials {
 				username = project.findProperty("github.username") as String
 				password = project.findProperty("github.token") as String
@@ -125,9 +118,11 @@ publishing {
 }
 
 dependencies {
-	implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 	implementation("org.slf4j:slf4j-api:1.7.30")
 	implementation("org.jetbrains:annotations:20.1.0")
+
+	implementation("com.fasterxml.jackson.core:jackson-core:2.12.1")
+	implementation("com.fasterxml.jackson.core:jackson-annotations:2.12.1")
 
 	compileOnly("org.projectlombok:lombok:1.18.16")
 	annotationProcessor("org.projectlombok:lombok:1.18.16")
@@ -137,4 +132,3 @@ dependencies {
 	testImplementation("org.junit.jupiter:junit-jupiter:5.7.0")
 	testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.7.0")
 }
-
