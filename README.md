@@ -1,6 +1,6 @@
-# tmpl-java-library
+# Project Chimera
 
-Template for Java library project
+Thingplug API
 
 ---
 developed by Elex
