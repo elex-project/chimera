@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "com.elex-project"
-version = "3.0.0"
+version = "3.0.1"
 description = "Thingplug API"
 
 repositories {
@@ -69,7 +69,7 @@ publishing {
 		create<MavenPublication>("mavenJava") {
 			from(components["java"])
 			pom {
-				name.set(project.name)
+				name.set("Thingplug API")
 				description.set(project.description)
 				url.set("https://github.com/elex-project/chimera")
 				licenses {
