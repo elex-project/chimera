@@ -364,6 +364,13 @@ public final class ThingPlug {
 		//listener.onCompleted(future.thenApply(api::conv).get(TIME_OUT, TimeUnit.SECONDS));
 	}
 
+	public static @NotNull DeleteSubscriptionResponse deleteSubscription(@NotNull Subscription subscription, @NotNull Ltid ltid, @NotNull UserKey userKey) throws IOException, InterruptedException {
+		DeleteSubscriptionRequest api = new DeleteSubscriptionRequest(subscription, ltid, userKey);
+		HttpResponse<String> response = httpClient().send(api.build(),
+				HttpResponse.BodyHandlers.ofString(StandardCharsets.UTF_8));
+		return api.conv(response);
+	}
+
 	public static void deleteSubscription(@NotNull Subscription subscription, @NotNull Ltid ltid, @NotNull UserKey userKey,
 	                                      @NotNull Listener<DeleteSubscriptionResponse> listener) {
 		DeleteSubscriptionRequest api = new DeleteSubscriptionRequest(subscription, ltid, userKey);
