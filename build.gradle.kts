@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "com.elex-project"
-version = "3.0.1"
+version = "3.0.3"
 description = "Thingplug API"
 
 repositories {
